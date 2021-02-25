@@ -1,0 +1,152 @@
+:root {
+  --blue-king: #2d4e6b;
+  --green: #16c79a;
+  --border: 8px solid var(--blue-king);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+i {
+  font-size: 80px;
+}
+
+body {
+  background-color: var(--green);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Karla', sans-serif;
+  margin: 0;
+  text-align: center;
+}
+
+.header {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.header__title {
+  font-size: 17rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--blue-king);
+}
+
+.header__description {
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-size: 2.6rem;
+  font-weight: 500;
+  word-spacing: 3px;
+}
+
+.header__description--into {
+  color: var(--blue-king);
+  font-weight: 600;
+}
+
+.score__container {
+  display: flex;
+  justify-content: space-around;
+  height: 60px;
+  margin-bottom: 50px;
+}
+
+.score,
+.score__into {
+  font-size: 55px;
+  font-weight: 800;
+  text-align: center;
+  margin: 0;
+}
+
+.score {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.score__into {
+  color: var(--blue-king);
+}
+
+.score__player {
+  height: 60px;
+  width: 60px;
+}
+
+.score__player1 {
+  background-image: url('../assets/Group1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.score__player2 {
+  background-image: url('../assets/Ellipse1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.row {
+  display: flex;
+}
+
+.playground__container {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: -1px -1px 42px 1px rgba(110, 110, 110, 0.35);
+  margin-bottom: 30px;
+}
+
+.playground__space {
+  box-sizing: border-box;
+  border-color: transparent;
+  height: 120px;
+  width: 120px;
+  margin: 0px;
+  transition-property: background-color, background-position;
+  transition-duration: 0.2s;
+}
+
+.playground__space:hover {
+  background-color: #1d9e7d;
+}
+
+.playground__space:focus {
+  outline: none;
+  background-color: #1d9e7d;
+}
+
+.space1,
+.space4,
+.space7 {
+  border-right: var(--border);
+}
+
+.space3,
+.space6,
+.space9 {
+  border-left: var(--border);
+}
+
+.space1,
+.space2,
+.space4,
+.space5,
+.space3,
+.space6 {
+  border-bottom: var(--border);
+}
+
+.footer {
+  /* position: absolute;
+  bottom: 0; */
+  width: 100%;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+}
