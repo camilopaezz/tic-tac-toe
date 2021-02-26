@@ -1,49 +1,16 @@
-import config from '../../config.js';
-
 class TicTacToe {
   constructor() {
-    this.spaces = this.getSpaces();
-    this.score = document.querySelector('.score');
-
-    this.toggleTurn = this.toggleTurn;
-
-    this.scoreX = 0;
-    this.scoreO = 0;
+    this.scores = new Array(2).fill(0);
     this.turn = 0;
-    this.numberOfTurn = 0;
   }
 
-  addTurn() {
-    this.numberOfTurn++;
-  }
-
-  toggleTurn() {
-    switch (this.turn) {
-      case 0:
-        this.turn = 1;
-        break;
-      case 1:
-        this.turn = 0;
-        break;
-
-      default:
-        break;
+  static getInstance() {
+    if (this.instance) {
+      return this.instance;
+    } else {
+      this.instance = new TicTacToe();
+      return this.instance;
     }
-  }
-
-  getSpaces() {
-    const spaces = document.getElementsByClassName('playground__space');
-    return [...spaces];
-  }
-
-  joint() {
-    this.spaces.forEach((value) => {
-      value.style['background-image'] = ``;
-      value.style['background-repeat'] = 'initial';
-      value.style['background-position'] = 'initial';
-      this.numberOfTurn = 0;
-      this.turn = 0;
-    });
   }
 
   seeAWinner(node1, node2, node3) {
@@ -60,7 +27,6 @@ class TicTacToe {
         _node1.style['background-image'] === _node2.style['background-image'] &&
         _node2.style['background-image'] === _node3.style['background-image']
       ) {
-        debugger;
         console.log('winner, no se quien pero winner');
       }
     }
@@ -102,32 +68,6 @@ class TicTacToe {
     } else if (number === 7) {
       this.seeAWinner(number, number - 2, number - 4);
     }
-  }
-
-  setStyles(target) {
-    const route = this.turn === 0 ? config.imgRoutes.x : config.imgRoutes.o;
-
-    if (!target.style['background-image']) {
-      target.style['background-image'] = `url(${route})`;
-      target.style['background-repeat'] = 'no-repeat';
-      target.style['background-position'] = 'center';
-      this.checkWinner(target);
-      this.addTurn();
-      this.toggleTurn();
-    }
-  }
-
-  handler(event) {
-    if (event.type === 'click' || event.key === 'Enter') {
-      this.setStyles(event.target);
-      if (this.numberOfTurn === 9) this.joint();
-    }
-  }
-
-  addListeners(...toDo) {
-    toDo.forEach((value) => {
-      value.element.addEventListener(value.type, this.handler.bind(this));
-    });
   }
 }
 

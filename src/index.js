@@ -1,7 +1,14 @@
+import Cases from './classes/Cases.js';
 import TicTacToe from './classes/TicTacToe.js';
-import configs from '../config.js';
+import EventsHandler from './classes/Events.js';
 
-const game = new TicTacToe();
 const container = document.querySelector('.playground__container');
+const initialTemplate = container.innerHTML;
 
-game.addListeners({ element: container, type: 'click' }, { element: container, type: 'keydown' });
+const Game = TicTacToe.getInstance();
+console.log(Game);
+
+EventsHandler.addListeners(
+  { element: container, type: 'click' },
+  { element: container, type: 'keydown' },
+);

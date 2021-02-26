@@ -49,9 +49,10 @@ body {
 
 .score__container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 60px;
   margin-bottom: 50px;
+  width: 400px;
 }
 
 .score,
@@ -77,13 +78,13 @@ body {
 }
 
 .score__player1 {
-  background-image: url('../assets/Group1.png');
+  background-image: url('./assets/Group1.png');
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .score__player2 {
-  background-image: url('../assets/Ellipse1.png');
+  background-image: url('./assets/Ellipse1.png');
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -97,6 +98,48 @@ body {
   overflow: hidden;
   box-shadow: -1px -1px 42px 1px rgba(110, 110, 110, 0.35);
   margin-bottom: 30px;
+  width: 360px;
+  height: 360px;
+}
+
+.playground__container--win {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(./assets/confeti.png);
+  background-position-y: -180px;
+  background-position-x: -18px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+}
+
+.win__image {
+  height: 100px;
+}
+
+.win__text {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--blue-king);
+}
+
+.playground__container--draw {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  font-weight: 600;
+  color: var(--blue-king);
+}
+
+.draw__emoji {
+  font-size: 8rem;
+}
+
+.draw__text {
+  margin: 0;
 }
 
 .playground__space {
