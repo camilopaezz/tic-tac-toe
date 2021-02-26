@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "./src/index.js",
   "scripts": {
-    "build": "esbuild src/index.js --bundle --outfile=public/index.js --minify --sourcemap --loader:.png=file --watch",
+    "build": "esbuild src/index.js --bundle --outfile=public/index.js --minify --sourcemap --loader:.png=file",
     "start": "servor ./public --reload"
   },
   "keywords": [],
