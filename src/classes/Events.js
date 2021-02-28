@@ -1,29 +1,28 @@
-import Cases from './Cases.js';
 import addSymbol from '../utils/addSymbol.js';
-import TurnHandler from './Turn.js';
 import initial from '../components/initial';
 import TicTacToe from './TicTacToe.js';
+import Check from './Check.js';
 
 class EventsHandler {
   static addListeners(...elements) {
-    console.log('im here');
-    console.log(this);
     elements.forEach((value) => {
-      value.element.addEventListener(value.type, this.handler.bind(TicTacToe.getInstance()));
+      value.element.addEventListener(value.type, this.handler);
     });
   }
 
   static removeListeners(...elements) {
     elements.forEach((value) => {
-      value.element.removeEventListener(value.type, this.handler.bind(TicTacToe.getInstance()));
+      value.element.removeEventListener(value.type, this.handler);
     });
   }
 
   static handler(event) {
+    const game = TicTacToe.getInstance();
     if (event.type === 'click' || event.key === 'Enter') {
-      addSymbol(event.target, this);
-      TurnHandler.addTurn(this);
-      if (this.turn === 9) Cases.draw(initial(), this);
+      const hasImage = addSymbol(event.target, game);
+      if (!hasImage) {
+        Check.check(event.target, game);
+      }
     }
   }
 }
