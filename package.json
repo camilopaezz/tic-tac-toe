@@ -4,6 +4,7 @@
   "main": "./src/index.js",
   "scripts": {
     "build": "esbuild src/index.js --bundle --outfile=public/index.js --minify --sourcemap --loader:.png=file",
+    "devbuild": "esbuild src/index.js --bundle --outfile=public/index.js  --loader:.png=file --watch",
     "start": "servor ./public --reload"
   },
   "keywords": [],
