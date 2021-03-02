@@ -1,8 +1,11 @@
+import o from '../assets/Ellipse1.png';
+import x from '../assets/Group1.png';
+
 const defineImageUrl = (player) => {
   if (player === 1) {
-    return 'assets/Group1.png';
+    return x;
   } else {
-    return 'assets/Ellipse1.png';
+    return o;
   }
 };
 

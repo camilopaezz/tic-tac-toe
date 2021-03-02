@@ -1,4 +1,5 @@
 import EventsHandler from './classes/Events.js';
+import './styles/index.css';
 
 const container = document.querySelector('.playground__container');
 

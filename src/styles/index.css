@@ -78,13 +78,13 @@ body {
 }
 
 .score__player1 {
-  background-image: url('./assets/Group1.png');
+  background-image: url('@images/Group1.png');
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .score__player2 {
-  background-image: url('./assets/Ellipse1.png');
+  background-image: url('@images/Ellipse1.png');
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -106,7 +106,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(./assets/confeti.png);
+  background-image: url(@images/confeti.png);
   background-position-y: -180px;
   background-position-x: -18px;
   background-repeat: no-repeat;
