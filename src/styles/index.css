@@ -193,3 +193,16 @@ body {
   align-items: center;
   font-size: 1.6rem;
 }
+
+button {
+  height: 50px;
+  width: 160px;
+  background-color: #2d4e6b;
+  color: white;
+  font-size: 1.8rem;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  font-family: 'Karla', sans-serif;
+  font-weight: 600;
+}

@@ -1,7 +1,7 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const path = require('path');
-const { CleanPlugin } = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require('path')
+const { CleanPlugin } = require('webpack')
 
 module.exports = {
   entry: {
@@ -37,6 +37,11 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    open: true,
+    contentBase: '/dist',
+    compress: true,
+  },
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
@@ -48,4 +53,4 @@ module.exports = {
     }),
     new CleanPlugin(),
   ],
-};
+}
