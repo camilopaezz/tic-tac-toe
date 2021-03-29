@@ -198,11 +198,17 @@ button {
   height: 50px;
   width: 160px;
   background-color: #2d4e6b;
-  color: white;
+  color: var(--green);
   font-size: 1.8rem;
   border: 1px solid transparent;
   border-radius: 10px;
   margin-bottom: 40px;
   font-family: 'Karla', sans-serif;
   font-weight: 600;
+  transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s transform;
+}
+
+button:hover,
+button:focus {
+  transform: translateY(-5px);
 }
