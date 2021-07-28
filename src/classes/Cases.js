@@ -6,7 +6,7 @@ import TurnHandler from './Turn'
 
 class Cases {
   static draw(initialTemplate, game) {
-    const container = document.querySelector('.playground__container')
+    const container = document.querySelector('.playground')
     container.innerHTML = draw()
 
     setTimeout(() => (container.innerHTML = initialTemplate), 2000)
@@ -18,7 +18,7 @@ class Cases {
     game.scores[player - 1]++
     Score.updateScore(...game.scores)
 
-    const container = document.querySelector('.playground__container')
+    const container = document.querySelector('.playground')
     container.innerHTML = win(game)
 
     setTimeout(() => (container.innerHTML = initialTemplate), 2000)
